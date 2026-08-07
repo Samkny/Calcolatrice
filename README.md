@@ -76,3 +76,7 @@ docker run --rm calcolatrice-c
 
 - Se vuoi usare un’immagine invece del video di sfondo, puoi sostituire il file `Aesthetic_Study.mp4` con un file immagine e aggiornare `calculator.css`.
 - Il pulsante `scient.` mostra la modalitò scientifica e cambia verso alla freccia quando viene attivata o disattivata.
+
+## Preview
+
+![preview](preview.png) ![preview-scient](preview-scient.png)
