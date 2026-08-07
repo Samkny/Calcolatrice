@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+    <link rel="stylesheet" href="calculator.css?v=6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=VT323&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js"></script>
+</head>
+<body>
+    <video class="background-video" autoplay muted loop playsinline>
+  <source src="Aesthetic_Study.mp4" type="video/mp4">
+ </video>
+    <div class="calculator">
+        <div id="calculatorImage" class="calculator__image" aria-hidden="true"></div>
+        <div class="calculator__top-row">
+            <button class="button button--function button--scient-toggle">
+                <span class="scient-label">scient.</span>
+                <span class="scient-arrow">←</span>
+            </button>
+        </div>
+        <div class="calculator__display" id="display">0</div>
+        <div class="calculator__body">
+            <div class="calculator__scientific-panel">
+                <button class="button button--scientific button--function">sin</button>
+                <button class="button button--scientific button--function">cos</button>
+                <button class="button button--scientific button--function">tan</button>
+                <button class="button button--scientific button--function">log</button>
+                <button class="button button--scientific button--function">√x</button>
+                <button class="button button--scientific button--function">∛x</button>
+                <button class="button button--scientific button--operator">x²</button>
+                <button class="button button--scientific button--operator">xʸ</button>
+            </div>
+            <div class="calculator__buttons">
+                <button class="button button--function">C</button>
+                <button class="button button--function">±</button>
+                <button class="button button--function">%</button>
+                <button class="button button--operator">÷</button>
+                <button class="button">7</button>
+                <button class="button">8</button>
+                <button class="button">9</button>
+                <button class="button button--operator">×</button>
+                <button class="button">4</button>
+                <button class="button">5</button>
+                <button class="button">6</button>
+                <button class="button button--operator">-</button>
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+                <button class="button button--operator">+</button>
+                <button class="button button--wide">0</button>
+                <button class="button">.</button>
+                <button class="button button--equal">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js?v=1"></script>
+    <script src="p5-sketch.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* Stile della calcolatrice*/
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(12, 13, 20, 0.86), rgba(12, 13, 20, 0.86)),
+                url("Aesthetic_Study.mp4");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e8e0ff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.background-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.calculator {
+    width: min(360px, 100%);
+    position: relative;
+    overflow: hidden;
+    background-color: #181b24;
+    background-image: linear-gradient(180deg, #20242f 0%, #1a1d29 45%, #151822 100%),
+                      radial-gradient(circle at 20% 14%, rgba(120, 95, 255, 0.06) 0px, transparent 120px),
+                      radial-gradient(circle at 80% 18%, rgba(108, 87, 234, 0.05) 0px, transparent 180px);
+    background-repeat: no-repeat;
+    background-size: cover, 160px 160px, 220px 220px;
+    border: 1px solid rgba(118, 87, 214, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(115, 88, 235, 0.06), inset 0 -8px 30px rgba(0, 0, 0, 0.35);
+    padding: 24px;
+    transition: width 0.2s ease, min-height 0.2s ease;
+}
+
+.calculator.expanded {
+    width: min(520px, 100%);
+}
+
+.button--scientific {
+    display: none;
+}
+
+.calculator.expanded .button--scientific {
+    display: inline-flex;
+}
+
+.calculator__body {
+    display: grid;
+    grid-template-columns: 0 minmax(320px, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.calculator.expanded .calculator__body {
+    grid-template-columns: 140px minmax(320px, 1fr);
+}
+
+.calculator__scientific-panel {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    justify-items: stretch;
+    width: 100%;
+    overflow: hidden;
+}
+
+.calculator__scientific-panel .button {
+    width: 100%;
+}
+
+.calculator__buttons {
+    width: min(360px, 100%);
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator__image {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 110px;
+    height: 110px;
+    pointer-events: none;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.95;
+}
+
+.calculator__top-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+
+.calculator__display,
+.calculator__buttons {
+    position: relative;
+    z-index: 1;
+}
+
+.calculator__display {
+    background: linear-gradient(180deg, #10131c 0%, #161b25 100%);
+    color: #d8d1ff;
+    border-radius: 20px;
+    padding: 28px 20px 20px;
+    margin-bottom: 18px;
+    text-align: right;
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+    font-family: 'VT323', monospace;
+    border: 1px solid rgba(102, 80, 198, 0.18);
+    box-shadow: inset 0 2px 18px rgba(96, 72, 210, 0.08), inset 0 -2px 16px rgba(0,0,0,0.45);
+    text-shadow: 0 0 8px rgba(152, 124, 242, 0.28);
+}
+
+.calculator__buttons {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(148, 90, 199, 0.32);
+    border-radius: 16px;
+    padding: 18px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    background: linear-gradient(180deg, #262936 0%, #1f212b 100%);
+    color: #d8cffd;
+    box-shadow: 0 10px 24px rgba(28, 20, 49, 0.34);
+    font-family: 'Patrick Hand', cursive;
+    letter-spacing: 0.03em;
+}
+
+.button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 16px 28px rgba(60, 28, 95, 0.35);
+}
+
+.button:active {
+    transform: translateY(1px) scale(0.99);
+    box-shadow: 0 6px 14px rgba(34, 18, 61, 0.28);
+}
+
+.button--operator {
+    background: linear-gradient(180deg, #4b3f6f 0%, #3f3360 100%);
+    color: #eee7ff;
+    box-shadow: 0 10px 26px rgba(74, 56, 130, 0.34);
+    font-size: 1.26rem;
+}
+
+.button--operator sup {
+    font-size: 0.92em;
+    vertical-align: super;
+    line-height: 1;
+}
+
+.button--function {
+    background: linear-gradient(180deg, #232733 0%, #1d212c 100%);
+    color: #cfc7ff;
+    box-shadow: 0 10px 24px rgba(28, 23, 52, 0.32);
+}
+
+.button--equal {
+    background: linear-gradient(180deg, #5b4fc7 0%, #4a3e9e 100%);
+    color: #f6f0ff;
+    grid-column: span 2;
+    box-shadow: 0 10px 26px rgba(80, 61, 155, 0.28);
+}
+
+.button--scient-toggle {
+    width: 88px;
+    min-width: 88px;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #26283c 0%, #1f2140 100%);
+    color: #d6cdff;
+    border: 1px solid rgba(126, 102, 214, 0.28);
+    box-shadow: 0 10px 22px rgba(58, 43, 118, 0.26);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.button--scient-toggle .scient-label {
+    display: block;
+    line-height: 1;
+}
+
+.button--scient-toggle .scient-arrow {
+    display: block;
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.button--scient-toggle:hover {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.button:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.35);
+    outline-offset: 3px;
+}
+
+
+.button--wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 420px) {
+    .calculator {
+        padding: 18px;
+    }
+
+    .calculator__display {
+        font-size: 1.75rem;
+        padding: 18px 16px;
+    }
+
+    .button {
+        padding: 16px 0;
+        font-size: 1rem;
+    }
+}
